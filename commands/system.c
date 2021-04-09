@@ -52,7 +52,7 @@ CLI_CMD(version) {
 
     esp_chip_info_t chip_info;
     esp_chip_info(&chip_info);
-    const char* model_str = chip_info.model==CHIP_ESP32 ? "ESP32" : "";
+    const char* model_str = chip_info.model==CHIP_ESP32 ? "ESP32" : (chip_info.model==CHIP_ESP32S2 ? "ESP32S2": "unknown");
     const char* ft_emb_flash = (chip_info.features|CHIP_FEATURE_EMB_FLASH)>0 ? " EMB_FLASH" : "";
     const char* ft_wifi_bgn = (chip_info.features|CHIP_FEATURE_WIFI_BGN)>0 ? " WIFI_BGN" : "";
     const char* ft_ble = (chip_info.features|CHIP_FEATURE_BLE)>0 ? " BLE" : "";
