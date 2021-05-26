@@ -172,7 +172,7 @@ void draw_cli(void) {
     cli_status.cli_flush_func();
 }
 void clear_cli(void) {
-#if CLI_ANSI_ESCAPE_CODE_ENABLED==1
+#if (CLI_ANSI_ESCAPE_CODE_ENABLED==1) && (CLI_RETURN_CMD_DOUBLE==1)
     cli_output(" ");
     int pos = cli_status.current_pos;
     while ( pos < cli_status.current_length ) {
@@ -190,7 +190,7 @@ void clear_cli(void) {
         cli_output(" ");
     }
     cli_output("\r");
-#endif //CLI_ANSI_ESCAPE_CODE_ENABLED==1
+#endif //CLI_ANSI_ESCAPE_CODE_ENABLED==1 && (CLI_RETURN_CMD_DOUBLE==1)
 }
 void redraw_cli(void) {
     clear_cli();
