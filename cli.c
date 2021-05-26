@@ -190,7 +190,7 @@ void clear_cli(void) {
         cli_output(" ");
     }
     cli_output("\r");
-#endif //CLI_ANSI_ESCAPE_CODE_ENABLED==1
+#endif //CLI_ANSI_ESCAPE_CODE_ENABLED==1 && (CLI_RETURN_CMD_DOUBLE==1)
 }
 void redraw_cli(void) {
     clear_cli();
