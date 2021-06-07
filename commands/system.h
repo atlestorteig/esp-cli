@@ -9,9 +9,6 @@
 #include "../cmd_create.h"
 #include "../cli.h"
 
-static void vStartSimpleMQTTDemo(void);
-static void spinMqtt(void);
-
 
 CLI_CMD(sizeof) {
     if ( argc < 2 ) {
@@ -47,13 +44,6 @@ CLI_CMD(restart) {
     cli_printf("The system will restart in a couple of seconds\n");
     CLI_CMD_SLEEP(2);
     esp_restart();
-    return CLI_CMD_RETURN_OK;
-}
-
-CLI_CMD(startMQTT) {
-    cli_printf("Starting vStartSimpleMQTTDemo\n");
-    //vStartSimpleMQTTDemo();
-    spinMqtt();
     return CLI_CMD_RETURN_OK;
 }
 

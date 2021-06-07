@@ -1,4 +1,6 @@
-
+#ifdef __cplusplus 
+extern "C"{
+#endif
 
 #ifndef ESP_CLI_H__
 #define ESP_CLI_H__
@@ -14,3 +16,8 @@
 #endif
 
 #endif //ESP_CLI_H__
+
+#ifdef __cplusplus 
+}
+#endif
+
