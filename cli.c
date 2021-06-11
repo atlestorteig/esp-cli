@@ -414,12 +414,8 @@ int process_special_command(uint8_t val) {
             }
         }
         break;
-        case '2': {  // followed by '~' is insert
-            if (special_cmd_ptr != 1) {
-                special_cmd = -1;
-            }
-        }
-        case '3': {  // followed by '~' is delete
+        case '2':   // followed by '~' is insert
+        case '3': { // followed by '~' is delete
             if (special_cmd_ptr != 1) {
                 special_cmd = -1;
             }
